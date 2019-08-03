@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="表格拆分" Height="600" Width="800">
+    <Grid Name="主界面" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,5">
+            <Button Content="请选择要拆分的表格" Click="Button_选择表格_Click" />
+            <Label Content="每列行数" Margin="50,0,0,0" />
+            <TextBox Name="TextBoxRowNum" MinWidth="50" Text="50" />
+            <Button Content="开始生成" Click="Button_开始生成_Click" Margin="50,0,0,0" Width="100" />
+            <Button Content="导出数据" Click="Button_导出数据_Click" Margin="25,0,0,0" Width="100" />
+        </StackPanel>
+        <DataGrid Name="DataGrid数据" Grid.Row="1" CanUserAddRows="False" CanUserDeleteRows="False" />
+    </Grid>
+</Window>
